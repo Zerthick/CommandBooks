@@ -32,6 +32,7 @@ import org.spongepowered.api.entity.living.player.Player;
 import org.spongepowered.api.item.ItemTypes;
 import org.spongepowered.api.item.inventory.ItemStack;
 import org.spongepowered.api.text.Text;
+import org.spongepowered.api.text.chat.ChatTypes;
 import org.spongepowered.api.text.format.TextColors;
 import org.spongepowered.api.text.format.TextStyles;
 
@@ -91,9 +92,12 @@ public class CommandBookCreateExecutor extends AbstractCommandExecutor {
                 }
 
                 player.setItemInHand(HandTypes.MAIN_HAND, item);
+            } else {
+                player.sendMessage(ChatTypes.CHAT, Text.of(TextColors.RED, "You can't make a Command Book out of that item!"));
             }
+            return CommandResult.success();
         }
-
+        src.sendMessage(Text.of("You can't create Command Books from the console!"));
         return CommandResult.success();
     }
 }
