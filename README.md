@@ -15,7 +15,7 @@ commandbooks.use
 
 ##Creating a Command Book
 To create a Command Book simply open a regular Mincraft book and type into it the commands you would like to be executed by the book and sign it.
-Commands can run multiple lines, however new commands should start on a new line.
+Commands can be multiple lines, however new commands should start on a new line.
 To have a command be executed by the console instead of the player prefix it with `$`.
 To use the player's name inside a command use `@p`.
 
