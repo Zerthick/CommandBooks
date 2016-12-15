@@ -42,7 +42,6 @@ import java.util.List;
 import java.util.Optional;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import java.util.stream.Collectors;
 
 public class CommandBookCreateExecutor extends AbstractCommandExecutor {
 
@@ -69,6 +68,8 @@ public class CommandBookCreateExecutor extends AbstractCommandExecutor {
 
                 boolean isCommandBook = item.get(CommandBookData.class).isPresent();
 
+                ItemStack commandBookItem = ItemStack.of(ItemTypes.ENCHANTED_BOOK, 1);
+
                 //Attach the command data
                 List<String> commands = new ArrayList<>();
                 for(Text page : item.get(Keys.BOOK_PAGES).get()) {
@@ -77,21 +78,20 @@ public class CommandBookCreateExecutor extends AbstractCommandExecutor {
                         commands.addAll(Arrays.asList(matcher.group(1).split("\\\\n")));
                     }
                 }
-                item.offer(new CommandBookData(commands, uses));
+                commandBookItem.offer(new CommandBookData(commands, uses));
 
-                //If the item was already a command book we don't need to update it's title.
-                if(!isCommandBook) {
-                    Text name = item.get(Keys.DISPLAY_NAME).orElse(Text.of(""));
-                    item.offer(Keys.DISPLAY_NAME, Text.of(TextStyles.ITALIC, TextColors.AQUA, '[', name, ']'));
-                }
+                //Set Name
+                Text name = item.get(Keys.DISPLAY_NAME).orElse(Text.of(""));
+                commandBookItem.offer(Keys.DISPLAY_NAME, Text.of(TextStyles.ITALIC, TextColors.AQUA, '[', name, ']'));
 
+                //Display Uses in Item Lore
                 if(uses != -1) {
-                    item.offer(Keys.ITEM_LORE, ImmutableList.of(Text.of("Uses: ", uses)));
+                    commandBookItem.offer(Keys.ITEM_LORE, ImmutableList.of(Text.of("Uses: ", uses)));
                 } else {
-                    item.offer(Keys.ITEM_LORE, ImmutableList.of(Text.of("Uses: ", "\u221E")));
+                    commandBookItem.offer(Keys.ITEM_LORE, ImmutableList.of(Text.of("Uses: ", "\u221E")));
                 }
 
-                player.setItemInHand(HandTypes.MAIN_HAND, item);
+                player.setItemInHand(HandTypes.MAIN_HAND, commandBookItem);
             } else {
                 player.sendMessage(ChatTypes.CHAT, Text.of(TextColors.RED, "You can't make a Command Book out of that item!"));
             }

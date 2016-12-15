@@ -48,7 +48,7 @@ import java.util.Optional;
 @Plugin(
         id = "commandbooks",
         name = "CommandBooks",
-        version = "1.1.0",
+        version = "1.2.0",
         description = "A simple Command Book plugin",
         authors = {
                 "Zerthick"
@@ -90,10 +90,10 @@ public class CommandBooks {
     }
 
     @Listener
-    public void onItemUse(InteractItemEvent.Secondary event, @Root Player player) {
+    public void onItemInteract(InteractItemEvent.Primary event, @Root Player player) {
 
         ItemStackSnapshot item = event.getItemStack();
-        if(item.getType() == ItemTypes.WRITTEN_BOOK) {
+        if (item.getType() == ItemTypes.ENCHANTED_BOOK) {
             Optional<List<String>> commands = item.get(CommandBookKeys.COMMAND_BOOK_COMMANDS);
             Optional<Integer> uses = item.get(CommandBookKeys.COMMAND_BOOK_USES);
             if(commands.isPresent() && uses.isPresent()) {
