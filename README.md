@@ -30,9 +30,9 @@ Example:
 This book would have the console set the time to day, op the player, and then the player would send a message to the chat.
 
 Finally, to create the command book, hold the book in your main hand and execute `/cb create`.
-The Title of the book should become encased in square brackets to signify the command book has been created.
+The title of the book should become encased in square brackets to signify the command book has been created.
 When creating the book you can optionally specify a max number of uses Ex: `/cb create 5` to limit the amount of times a book can be used.
 Once all the uses are used up, the book will be destroyed.
 
 ##Using a Command Book
-To use a command book simply hold it in your hand and right-click!
+To use a command book simply hold it in your hand and left-click!
