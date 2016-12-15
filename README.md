@@ -2,6 +2,7 @@
 A simple Minecraft Command Book Plugin
 
 You can check out the CommandBooks Sponge Forum Post [here](https://forums.spongepowered.org/t/commandbooks-like-signs-try-books/16165 "CommandBooks Sponge Forum Post")!
+
 ##Commands
 
     /cb - Displays version information about the CommandBooks Plugin. (Aliases: cb, commandbooks)
@@ -18,19 +19,19 @@ commandbooks.use
 To create a Command Book simply open a regular Minecraft book and type into it the commands you would like to be executed by the book and sign it.
 Commands can be multiple lines, however new commands should start on a new line.
 To have a command be executed by the console instead of the player prefix it with `$`.
-To use the player's name inside a command use `@p`.
+To use the player's name inside a command use `[p]`.
 
 Example:
 
     $time set day
-    $op @p
+    $op [p]
     say I've set the time to day and opped myself!
 
 This book would have the console set the time to day, op the player, and then the player would send a message to the chat.
 
 Finally, to create the command book, hold the book in your main hand and execute `/cb create`.
 The Title of the book should become encased in square brackets to signify the command book has been created.
-When creating the book you can optionally specify a max number of uses `/cb create 5` to limit the amount of times a book can be used.
+When creating the book you can optionally specify a max number of uses Ex: `/cb create 5` to limit the amount of times a book can be used.
 Once all the uses are used up, the book will be destroyed.
 
 ##Using a Command Book
