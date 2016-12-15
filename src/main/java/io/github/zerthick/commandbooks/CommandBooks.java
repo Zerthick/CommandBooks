@@ -29,24 +29,18 @@ import io.github.zerthick.commandbooks.cmddata.ImmutableCommandBookData;
 import org.slf4j.Logger;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.data.key.Keys;
-import org.spongepowered.api.data.type.HandTypes;
 import org.spongepowered.api.entity.living.player.Player;
 import org.spongepowered.api.event.Listener;
-import org.spongepowered.api.event.filter.Getter;
 import org.spongepowered.api.event.filter.cause.Root;
 import org.spongepowered.api.event.game.state.GameInitializationEvent;
 import org.spongepowered.api.event.game.state.GameStartedServerEvent;
 import org.spongepowered.api.event.item.inventory.InteractItemEvent;
-import org.spongepowered.api.event.item.inventory.UseItemStackEvent;
-import org.spongepowered.api.event.network.ClientConnectionEvent;
 import org.spongepowered.api.item.ItemTypes;
 import org.spongepowered.api.item.inventory.ItemStack;
 import org.spongepowered.api.item.inventory.ItemStackSnapshot;
 import org.spongepowered.api.plugin.Plugin;
 import org.spongepowered.api.plugin.PluginContainer;
 import org.spongepowered.api.text.Text;
-import org.spongepowered.api.text.format.TextColors;
-import org.spongepowered.api.text.format.TextStyles;
 
 import java.util.List;
 import java.util.Optional;
@@ -54,7 +48,7 @@ import java.util.Optional;
 @Plugin(
         id = "commandbooks",
         name = "CommandBooks",
-        version = "1.0.0",
+        version = "1.1.0",
         description = "A simple Command Book plugin",
         authors = {
                 "Zerthick"
@@ -108,7 +102,7 @@ public class CommandBooks {
 
                     //Process the commands
                     commands.get().forEach(c -> {
-                        String cmd = c.replace("@p", player.getName());
+                        String cmd = c.replace("[p]", player.getName());
                         //Check if it is a console command
                         if(cmd.startsWith("$")){
                             Sponge.getCommandManager().process(Sponge.getServer().getConsole(), cmd.substring(1).trim());
