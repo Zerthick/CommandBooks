@@ -62,7 +62,6 @@ public class CommandBooks {
     @Inject
     private PluginContainer instance;
 
-    private CommandRegister commandRegister;
 
     public Logger getLogger() {
         return logger;
@@ -76,8 +75,8 @@ public class CommandBooks {
     public void onGameInit(GameInitializationEvent event) {
         Sponge.getDataManager().register(CommandBookData.class, ImmutableCommandBookData.class, new CommandBookDataManipulatorBuilder());
 
-        commandRegister = new CommandRegister(this);
-        commandRegister.registerCmds();
+        //Register Commands
+        CommandRegister.registerCmds(this);
     }
 
     @Listener

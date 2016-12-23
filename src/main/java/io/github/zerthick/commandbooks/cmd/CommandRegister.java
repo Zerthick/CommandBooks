@@ -26,20 +26,11 @@ import io.github.zerthick.commandbooks.cmd.cmdexecutors.CommandBookExecutor;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.command.args.GenericArguments;
 import org.spongepowered.api.command.spec.CommandSpec;
-import org.spongepowered.api.plugin.PluginContainer;
 import org.spongepowered.api.text.Text;
 
 public class CommandRegister {
 
-    private CommandBooks plugin;
-    private PluginContainer pluginContainer;
-
-    public CommandRegister(CommandBooks plugin) {
-        this.plugin = plugin;
-        pluginContainer = plugin.getInstance();
-    }
-
-    public void registerCmds() {
+    public static void registerCmds(CommandBooks plugin) {
 
         CommandSpec commandBookCreate = CommandSpec.builder()
                 .permission("commandbooks.command.create")
