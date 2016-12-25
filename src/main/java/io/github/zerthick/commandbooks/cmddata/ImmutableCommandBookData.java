@@ -25,6 +25,7 @@ import org.spongepowered.api.data.manipulator.immutable.common.AbstractImmutable
 import org.spongepowered.api.data.value.immutable.ImmutableBoundedValue;
 import org.spongepowered.api.data.value.immutable.ImmutableListValue;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ImmutableCommandBookData extends AbstractImmutableData<ImmutableCommandBookData, CommandBookData> {
@@ -33,7 +34,7 @@ public class ImmutableCommandBookData extends AbstractImmutableData<ImmutableCom
     private final int uses;
 
     public ImmutableCommandBookData() {
-        this(null, 0);
+        this(new ArrayList<>(), 0);
     }
 
     public ImmutableCommandBookData(List<String> commands, int uses) {

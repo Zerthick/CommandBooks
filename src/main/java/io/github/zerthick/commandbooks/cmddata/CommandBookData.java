@@ -37,7 +37,7 @@ public class CommandBookData extends AbstractData<CommandBookData, ImmutableComm
     private int uses;
 
     public CommandBookData() {
-        this(null, 0);
+        this(new ArrayList<>(), 0);
     }
 
     public CommandBookData(List<String> commands, int uses) {
