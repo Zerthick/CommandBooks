@@ -7,8 +7,9 @@ A simple Minecraft Command Book Plugin
 `/cb create [uses]` - Creates a Command Book from the book currently held in your main hand with an optional max number of uses  
 
 ##Permissions
-`commandbooks.command.create`  
-`commandbooks.use`  
+`commandbooks.use`
+`commandbooks.command.info`
+`commandbooks.command.create`    
 
 ##Creating a Command Book
 To create a Command Book simply open a regular Minecraft book and type into it the commands you would like to be executed by the book and sign it.
