@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016  Zerthick
+ * Copyright (C) 2017  Zerthick
  *
  * This file is part of CommandBooks.
  *
@@ -22,10 +22,8 @@ package io.github.zerthick.commandbooks;
 import com.google.common.collect.ImmutableList;
 import com.google.inject.Inject;
 import io.github.zerthick.commandbooks.cmd.CommandRegister;
-import io.github.zerthick.commandbooks.cmddata.CommandBookData;
-import io.github.zerthick.commandbooks.cmddata.CommandBookDataManipulatorBuilder;
-import io.github.zerthick.commandbooks.cmddata.CommandBookKeys;
-import io.github.zerthick.commandbooks.cmddata.ImmutableCommandBookData;
+import io.github.zerthick.commandbooks.data.CommandBooksData;
+import io.github.zerthick.commandbooks.data.commandbook.CommandBookKeys;
 import org.slf4j.Logger;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.data.key.Keys;
@@ -73,7 +71,9 @@ public class CommandBooks {
 
     @Listener
     public void onGameInit(GameInitializationEvent event) {
-        Sponge.getDataManager().register(CommandBookData.class, ImmutableCommandBookData.class, new CommandBookDataManipulatorBuilder());
+
+        //Register Custom Data Manipulators
+        CommandBooksData.registerData();
 
         //Register Commands
         CommandRegister.registerCmds(this);

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016  Zerthick
+ * Copyright (C) 2017  Zerthick
  *
  * This file is part of CommandBooks.
  *
@@ -21,7 +21,7 @@ package io.github.zerthick.commandbooks.cmd.cmdexecutors;
 
 import com.google.common.collect.ImmutableList;
 import io.github.zerthick.commandbooks.CommandBooks;
-import io.github.zerthick.commandbooks.cmddata.CommandBookData;
+import io.github.zerthick.commandbooks.data.commandbook.mutable.CommandBookData;
 import org.spongepowered.api.command.CommandException;
 import org.spongepowered.api.command.CommandResult;
 import org.spongepowered.api.command.CommandSource;

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016  Zerthick
+ * Copyright (C) 2017  Zerthick
  *
  * This file is part of CommandBooks.
  *
@@ -40,7 +40,7 @@ public class CommandRegister {
                 .build();
 
         CommandSpec commandBook = CommandSpec.builder()
-                .permission("commandbooks.command")
+                .permission("commandbooks.command.info")
                 .executor(new CommandBookExecutor(plugin))
                 .child(commandBookCreate, "create")
                 .build();

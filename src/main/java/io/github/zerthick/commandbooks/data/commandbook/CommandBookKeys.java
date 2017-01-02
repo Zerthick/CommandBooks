@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016  Zerthick
+ * Copyright (C) 2017  Zerthick
  *
  * This file is part of CommandBooks.
  *
@@ -17,7 +17,7 @@
  * along with CommandBooks.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package io.github.zerthick.commandbooks.cmddata;
+package io.github.zerthick.commandbooks.data.commandbook;
 
 import com.google.common.reflect.TypeToken;
 import org.spongepowered.api.data.DataQuery;
@@ -26,7 +26,6 @@ import org.spongepowered.api.data.key.KeyFactory;
 import org.spongepowered.api.data.value.mutable.ListValue;
 import org.spongepowered.api.data.value.mutable.MutableBoundedValue;
 
-import javax.annotation.Nullable;
 import java.util.List;
 
 public class CommandBookKeys {

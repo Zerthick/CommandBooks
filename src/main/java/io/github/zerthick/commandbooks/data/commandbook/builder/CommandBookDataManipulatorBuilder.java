@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016  Zerthick
+ * Copyright (C) 2017  Zerthick
  *
  * This file is part of CommandBooks.
  *
@@ -17,8 +17,11 @@
  * along with CommandBooks.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package io.github.zerthick.commandbooks.cmddata;
+package io.github.zerthick.commandbooks.data.commandbook.builder;
 
+import io.github.zerthick.commandbooks.data.commandbook.CommandBookKeys;
+import io.github.zerthick.commandbooks.data.commandbook.immutable.ImmutableCommandBookData;
+import io.github.zerthick.commandbooks.data.commandbook.mutable.CommandBookData;
 import org.spongepowered.api.data.DataHolder;
 import org.spongepowered.api.data.DataView;
 import org.spongepowered.api.data.manipulator.DataManipulatorBuilder;

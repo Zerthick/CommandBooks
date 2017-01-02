@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016  Zerthick
+ * Copyright (C) 2017  Zerthick
  *
  * This file is part of CommandBooks.
  *
@@ -17,8 +17,10 @@
  * along with CommandBooks.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-package io.github.zerthick.commandbooks.cmddata;
+package io.github.zerthick.commandbooks.data.commandbook.mutable;
 
+import io.github.zerthick.commandbooks.data.commandbook.CommandBookKeys;
+import io.github.zerthick.commandbooks.data.commandbook.immutable.ImmutableCommandBookData;
 import org.spongepowered.api.Sponge;
 import org.spongepowered.api.data.DataContainer;
 import org.spongepowered.api.data.DataHolder;
@@ -46,11 +48,11 @@ public class CommandBookData extends AbstractData<CommandBookData, ImmutableComm
         registerGettersAndSetters();
     }
 
-    public ListValue<String> commands() {
+    protected ListValue<String> commands() {
         return Sponge.getRegistry().getValueFactory().createListValue(CommandBookKeys.COMMAND_BOOK_COMMANDS, this.commands, new ArrayList<>());
     }
 
-    public MutableBoundedValue<Integer> uses() {
+    protected MutableBoundedValue<Integer> uses() {
         return Sponge.getRegistry().getValueFactory().createBoundedValueBuilder(CommandBookKeys.COMMAND_BOOK_USES)
                 .defaultValue(0)
                 .minimum(-1)
