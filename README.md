@@ -1,8 +1,6 @@
 # CommandBooks
 A simple Minecraft Command Book Plugin
 
-You can check out the CommandBooks Sponge Forum Post [here](https://forums.spongepowered.org/t/commandbooks-like-signs-try-books/16165 "CommandBooks Sponge Forum Post")!
-
 ##Commands
 
 `/cb` - Displays version information about the CommandBooks Plugin. (Aliases: cb, commandbooks)  
