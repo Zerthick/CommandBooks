@@ -46,7 +46,7 @@ import java.util.Optional;
 @Plugin(
         id = "commandbooks",
         name = "CommandBooks",
-        version = "1.2.0",
+        version = "1.3.0",
         description = "A simple Command Book plugin",
         authors = {
                 "Zerthick"
