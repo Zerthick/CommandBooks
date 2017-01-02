@@ -5,15 +5,12 @@ You can check out the CommandBooks Sponge Forum Post [here](https://forums.spong
 
 ##Commands
 
-    /cb - Displays version information about the CommandBooks Plugin. (Aliases: cb, commandbooks)
-    /cb create [uses] - Creates a Command Book from the book currently held in your main hand with an optional max number of uses
-
+`/cb` - Displays version information about the CommandBooks Plugin. (Aliases: cb, commandbooks)  
+`/cb create [uses]` - Creates a Command Book from the book currently held in your main hand with an optional max number of uses  
 
 ##Permissions
-```
-commandbooks.command.create
-commandbooks.use
-```
+`commandbooks.command.create`  
+`commandbooks.use`  
 
 ##Creating a Command Book
 To create a Command Book simply open a regular Minecraft book and type into it the commands you would like to be executed by the book and sign it.
