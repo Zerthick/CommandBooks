@@ -22,7 +22,7 @@ package io.github.zerthick.commandbooks;
 import com.google.common.collect.ImmutableList;
 import com.google.inject.Inject;
 import io.github.zerthick.commandbooks.cmd.CommandRegister;
-import io.github.zerthick.commandbooks.data.CommandBooksData;
+import io.github.zerthick.commandbooks.data.CommandBookDataRegister;
 import io.github.zerthick.commandbooks.data.commandbook.CommandBookKeys;
 import org.slf4j.Logger;
 import org.spongepowered.api.Sponge;
@@ -46,7 +46,7 @@ import java.util.Optional;
 @Plugin(
         id = "commandbooks",
         name = "CommandBooks",
-        version = "1.3.0",
+        version = "1.4.0",
         description = "A simple Command Book plugin",
         authors = {
                 "Zerthick"
@@ -73,7 +73,7 @@ public class CommandBooks {
     public void onGameInit(GameInitializationEvent event) {
 
         //Register Custom Data Manipulators
-        CommandBooksData.registerData();
+        CommandBookDataRegister.registerData(getInstance());
 
         //Register Commands
         CommandRegister.registerCmds(this);

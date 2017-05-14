@@ -25,12 +25,17 @@ import io.github.zerthick.commandbooks.data.commandbook.mutable.CommandBookData;
 import org.spongepowered.api.data.DataHolder;
 import org.spongepowered.api.data.DataView;
 import org.spongepowered.api.data.manipulator.DataManipulatorBuilder;
+import org.spongepowered.api.data.persistence.AbstractDataBuilder;
 import org.spongepowered.api.data.persistence.InvalidDataException;
 
 import java.util.List;
 import java.util.Optional;
 
-public class CommandBookDataManipulatorBuilder implements DataManipulatorBuilder<CommandBookData, ImmutableCommandBookData>{
+public class CommandBookDataManipulatorBuilder extends AbstractDataBuilder<CommandBookData> implements DataManipulatorBuilder<CommandBookData, ImmutableCommandBookData> {
+
+    public CommandBookDataManipulatorBuilder(Class<CommandBookData> requiredClass, int supportedVersion) {
+        super(requiredClass, supportedVersion);
+    }
 
     @Override
     public CommandBookData create() {
@@ -43,7 +48,7 @@ public class CommandBookDataManipulatorBuilder implements DataManipulatorBuilder
     }
 
     @Override
-    public Optional<CommandBookData> build(DataView container) throws InvalidDataException {
+    public Optional<CommandBookData> buildContent(DataView container) throws InvalidDataException {
         if(container.contains(CommandBookKeys.COMMAND_BOOK_COMMANDS.getQuery(), CommandBookKeys.COMMAND_BOOK_USES.getQuery())) {
             final List<String> commands = container.getStringList(CommandBookKeys.COMMAND_BOOK_COMMANDS.getQuery()).get();
             final int uses = container.getInt(CommandBookKeys.COMMAND_BOOK_USES.getQuery()).get();

@@ -22,10 +22,18 @@ package io.github.zerthick.commandbooks.data;
 import io.github.zerthick.commandbooks.data.commandbook.builder.CommandBookDataManipulatorBuilder;
 import io.github.zerthick.commandbooks.data.commandbook.immutable.ImmutableCommandBookData;
 import io.github.zerthick.commandbooks.data.commandbook.mutable.CommandBookData;
-import org.spongepowered.api.Sponge;
+import org.spongepowered.api.data.DataRegistration;
+import org.spongepowered.api.plugin.PluginContainer;
 
-public class CommandBooksData {
-    public static void registerData() {
-        Sponge.getDataManager().register(CommandBookData.class, ImmutableCommandBookData.class, new CommandBookDataManipulatorBuilder());
+public class CommandBookDataRegister {
+    public static void registerData(PluginContainer container) {
+        DataRegistration.<CommandBookData, ImmutableCommandBookData>builder()
+                .dataClass(CommandBookData.class)
+                .immutableClass(ImmutableCommandBookData.class)
+                .builder(new CommandBookDataManipulatorBuilder(CommandBookData.class, 1))
+                .manipulatorId("command_book")
+                .dataName("Command Book Data")
+                .buildAndRegister(container);
     }
 }
+//commandbooks:command_book
