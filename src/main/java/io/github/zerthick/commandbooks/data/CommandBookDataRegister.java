@@ -30,7 +30,7 @@ public class CommandBookDataRegister {
         DataRegistration.<CommandBookData, ImmutableCommandBookData>builder()
                 .dataClass(CommandBookData.class)
                 .immutableClass(ImmutableCommandBookData.class)
-                .builder(new CommandBookDataManipulatorBuilder(CommandBookData.class, 1))
+                .builder(new CommandBookDataManipulatorBuilder())
                 .manipulatorId("command_book")
                 .dataName("Command Book Data")
                 .buildAndRegister(container);

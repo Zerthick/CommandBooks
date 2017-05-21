@@ -33,8 +33,8 @@ import java.util.Optional;
 
 public class CommandBookDataManipulatorBuilder extends AbstractDataBuilder<CommandBookData> implements DataManipulatorBuilder<CommandBookData, ImmutableCommandBookData> {
 
-    public CommandBookDataManipulatorBuilder(Class<CommandBookData> requiredClass, int supportedVersion) {
-        super(requiredClass, supportedVersion);
+    public CommandBookDataManipulatorBuilder() {
+        super(CommandBookData.class, 1);
     }
 
     @Override
