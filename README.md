@@ -1,17 +1,17 @@
 # CommandBooks
 A simple Minecraft Command Book Plugin
 
-##Commands
+## Commands
 
 `/cb` - Displays version information about the CommandBooks Plugin. (Aliases: cb, commandbooks)  
 `/cb create [uses]` - Creates a Command Book from the book currently held in your main hand with an optional max number of uses  
 
-##Permissions
+## Permissions
 `commandbooks.use`  
 `commandbooks.command.info`  
 `commandbooks.command.create`      
 
-##Creating a Command Book
+## Creating a Command Book
 To create a Command Book simply open a regular Minecraft book and type into it the commands you would like to be executed by the book and sign it.
 Commands can be multiple lines, however new commands should start on a new line.
 To have a command be executed by the console instead of the player prefix it with `$`.
@@ -30,5 +30,8 @@ The title of the book should become encased in square brackets to signify the co
 When creating the book you can optionally specify a max number of uses Ex: `/cb create 5` to limit the amount of times a book can be used.
 Once all the uses are used up, the book will be destroyed.
 
-##Using a Command Book
+## Using a Command Book
 To use a command book simply hold it in your hand and left-click!
+
+## Support Me
+I will **never** charge money for the use of my plugins, however they do require a significant amount of work to maintain and update. If you'd like to show your support and buy me a cup of tea sometime (I don't drink that horrid coffee stuff :P) you can do so [here](https://www.paypal.me/zerthick)
