@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016  Zerthick
+ * Copyright (C) 2018  Zerthick
  *
  * This file is part of CommandBooks.
  *
@@ -20,7 +20,6 @@
 package io.github.zerthick.commandbooks.cmd.cmdexecutors;
 
 import io.github.zerthick.commandbooks.CommandBooks;
-import org.spongepowered.api.command.CommandException;
 import org.spongepowered.api.command.CommandResult;
 import org.spongepowered.api.command.CommandSource;
 import org.spongepowered.api.command.args.CommandContext;
@@ -34,8 +33,7 @@ public class CommandBookExecutor extends AbstractCommandExecutor{
     }
 
     @Override
-    public CommandResult execute(CommandSource src, CommandContext args)
-            throws CommandException {
+    public CommandResult execute(CommandSource src, CommandContext args) {
 
         src.sendMessage(Text.of(TextColors.DARK_GREEN, container.getName(),
                 TextColors.GREEN, " version: ", TextColors.DARK_GREEN,

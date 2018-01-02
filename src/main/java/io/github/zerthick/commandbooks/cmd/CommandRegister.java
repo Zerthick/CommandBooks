@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017  Zerthick
+ * Copyright (C) 2018  Zerthick
  *
  * This file is part of CommandBooks.
  *
@@ -45,6 +45,6 @@ public class CommandRegister {
                 .child(commandBookCreate, "create")
                 .build();
 
-        Sponge.getCommandManager().register(plugin, commandBook, "commandBook", "cb");
+        Sponge.getCommandManager().register(plugin, commandBook, "commandbook", "cb");
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017  Zerthick
+ * Copyright (C) 2018  Zerthick
  *
  * This file is part of CommandBooks.
  *
@@ -22,19 +22,30 @@ package io.github.zerthick.commandbooks.data.commandbook;
 import com.google.common.reflect.TypeToken;
 import org.spongepowered.api.data.DataQuery;
 import org.spongepowered.api.data.key.Key;
-import org.spongepowered.api.data.key.KeyFactory;
 import org.spongepowered.api.data.value.mutable.ListValue;
 import org.spongepowered.api.data.value.mutable.MutableBoundedValue;
 
-import java.util.List;
-
 public class CommandBookKeys {
 
-    public static final Key<ListValue<String>> COMMAND_BOOK_COMMANDS = KeyFactory.makeListKey(new TypeToken<List<String>>() {},
-            new TypeToken<ListValue<String>>() {},
-            DataQuery.of("CommandBookCommands"), "commandbooks:command_book_commands", "Command Book Commands");
+    public static Key<ListValue<String>> COMMAND_BOOK_COMMANDS;
+    public static Key<MutableBoundedValue<Integer>> COMMAND_BOOK_USES;
 
-    public static final Key<MutableBoundedValue<Integer>> COMMAND_BOOK_USES = KeyFactory.makeSingleKey(TypeToken.of(Integer.class),
-            new TypeToken<MutableBoundedValue<Integer>>(){}, DataQuery.of("CommandBookUses"),"commandbooks:command_book_uses", "Command Book Uses");
+    public static void init() {
+        COMMAND_BOOK_COMMANDS = Key.builder()
+                .type(new TypeToken<ListValue<String>>() {
+                })
+                .query(DataQuery.of("CommandBookCommands"))
+                .id("commandbooks:command_book_commands")
+                .name("Command Book Commands")
+                .build();
+
+        COMMAND_BOOK_USES = Key.builder()
+                .type(new TypeToken<MutableBoundedValue<Integer>>() {
+                })
+                .query(DataQuery.of("CommandBookUses"))
+                .id("commandbooks:command_book_uses")
+                .name("Command Book Uses")
+                .build();
+    }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017  Zerthick
+ * Copyright (C) 2018  Zerthick
  *
  * This file is part of CommandBooks.
  *
@@ -19,6 +19,7 @@
 
 package io.github.zerthick.commandbooks.data;
 
+import io.github.zerthick.commandbooks.data.commandbook.CommandBookKeys;
 import io.github.zerthick.commandbooks.data.commandbook.builder.CommandBookDataManipulatorBuilder;
 import io.github.zerthick.commandbooks.data.commandbook.immutable.ImmutableCommandBookData;
 import io.github.zerthick.commandbooks.data.commandbook.mutable.CommandBookData;
@@ -27,6 +28,9 @@ import org.spongepowered.api.plugin.PluginContainer;
 
 public class CommandBookDataRegister {
     public static void registerData(PluginContainer container) {
+
+        CommandBookKeys.init();
+
         DataRegistration.<CommandBookData, ImmutableCommandBookData>builder()
                 .dataClass(CommandBookData.class)
                 .immutableClass(ImmutableCommandBookData.class)

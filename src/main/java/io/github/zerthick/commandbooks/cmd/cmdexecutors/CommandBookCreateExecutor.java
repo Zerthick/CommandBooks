@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2017  Zerthick
+ * Copyright (C) 2018  Zerthick
  *
  * This file is part of CommandBooks.
  *
@@ -22,7 +22,6 @@ package io.github.zerthick.commandbooks.cmd.cmdexecutors;
 import com.google.common.collect.ImmutableList;
 import io.github.zerthick.commandbooks.CommandBooks;
 import io.github.zerthick.commandbooks.data.commandbook.mutable.CommandBookData;
-import org.spongepowered.api.command.CommandException;
 import org.spongepowered.api.command.CommandResult;
 import org.spongepowered.api.command.CommandSource;
 import org.spongepowered.api.command.args.CommandContext;
@@ -52,7 +51,7 @@ public class CommandBookCreateExecutor extends AbstractCommandExecutor {
     }
 
     @Override
-    public CommandResult execute(CommandSource src, CommandContext args) throws CommandException {
+    public CommandResult execute(CommandSource src, CommandContext args) {
 
         Optional<Integer> usesOptional = args.getOne(CommandArgs.USES);
 
@@ -64,7 +63,7 @@ public class CommandBookCreateExecutor extends AbstractCommandExecutor {
             //Get the item the player is holding
             ItemStack item = player.getItemInHand(HandTypes.MAIN_HAND).orElse(null);
 
-            if(item != null && item.getItem() == ItemTypes.WRITTEN_BOOK) {
+            if (item != null && item.getType() == ItemTypes.WRITTEN_BOOK) {
 
                 boolean isCommandBook = item.get(CommandBookData.class).isPresent();
 
