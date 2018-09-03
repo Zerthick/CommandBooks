@@ -101,7 +101,8 @@ public class CommandBooks {
 
                     //Process the commands
                     commands.get().forEach(c -> {
-                        String cmd = c.replace("[p]", player.getName());
+                        String cmd = c.replace("[p]", player.getName())
+                                .replace("[w]", player.getWorld().getName());
                         //Check if it is a console command
                         if(cmd.startsWith("$")){
                             Sponge.getCommandManager().process(Sponge.getServer().getConsole(), cmd.substring(1).trim());
