@@ -44,8 +44,6 @@ import java.util.regex.Pattern;
 
 public class CommandBookCreateExecutor extends AbstractCommandExecutor {
 
-    private static Pattern textPattern =Pattern.compile("\\{\"text\":\"(.*?)\"}");
-
     public CommandBookCreateExecutor(CommandBooks plugin) {
         super(plugin);
     }
@@ -72,10 +70,7 @@ public class CommandBookCreateExecutor extends AbstractCommandExecutor {
                 //Attach the command data
                 List<String> commands = new ArrayList<>();
                 for(Text page : item.get(Keys.BOOK_PAGES).get()) {
-                    Matcher matcher = textPattern.matcher(page.toPlain());
-                    if(matcher.find()) {
-                        commands.addAll(Arrays.asList(matcher.group(1).split("\\\\n")));
-                    }
+                    commands.addAll(Arrays.asList(page.toPlain().split("\\\\n")));
                 }
                 commandBookItem.offer(new CommandBookData(commands, uses));
 
